@@ -43,17 +43,32 @@ button:hover {
     background-color: #0234ff;
 }
 
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    gap: 10px;
+}
 
-#viewer {
+.display #viewer {
     width: 200px;
     height: 200px;
-    background: rgb(0, 0, 0);
-    margin: 0 auto 15px;
+    background: rgb(0, 0, 0);   
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.679);
     box-shadow: 0 0 5px rgba(16, 16, 16, 0.59);
 }
 
+.display .colorCode {
+    display: flex;
+    justify-content: space-around;
+    width: 320px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(83, 85, 87);
+}
 .sliders {
     height: calc(100% - 200px - 15px);
     display: flex;
