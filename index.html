@@ -9,7 +9,11 @@
 </head>
 <body>
     <main>
-        <div id="viewer"></div>
+        <div class="display">
+            <div id="viewer"></div>
+            <p>Hex:<span id="hex"></span></p>
+            <p>RGB(<span id="rgb"></span>)</p>
+        </div>
         <div class="sliders">
             <div class="slider">
                 <span>R</span>
@@ -27,6 +31,8 @@
                 <span class="color-value">0</span>
             </div>
         </div>
+
+        <button>Copiar cor</button>
     </main>
 
     <script src="./script.js"></script>
