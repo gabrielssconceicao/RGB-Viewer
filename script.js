@@ -7,6 +7,7 @@ function hex(num){
     return hex;
 }
 
+
 const input = document.querySelectorAll('input');
 const [inputR, inputG, inputB] = input;
 const hexdec = document.querySelector('#hex');
@@ -14,36 +15,33 @@ const rgb = document.querySelector('#rgb');;
 const viewer = document.querySelector('#viewer');
 const button = document.querySelector('button');
 
-inputR.addEventListener('input', ()=>{
-    viewer.style.background = `rgb(${inputR.value},${inputG.value},${inputB.value})`
-    inputR.nextElementSibling.innerHTML = inputR.value;
+const rgbCode = () =>  `${inputR.value},${inputG.value},${inputB.value}`;
 
-    hexdec.innerHTML = `#${hex(inputR.value)}${hex(inputG.value)}${hex(inputB.value)}`;
-    rgb.innerHTML = `${inputR.value},${inputG.value},${inputB.value}`;
+const hexCode = ()=> `#${hex(inputR.value)}${hex(inputG.value)}${hex(inputB.value)}`;
+
+inputR.addEventListener('input', ()=>{
+    viewer.style.background = `rgb(${rgbCode()})`;
+    inputR.nextElementSibling.innerHTML = inputR.value;
+    hexdec.innerHTML = hexCode();
+    rgb.innerHTML = rgbCode();
 });
 
 inputG.addEventListener('input', ()=>{
-    viewer.style.background = `rgb(${inputR.value},${inputG.value},${inputB.value})`;
+    viewer.style.background = `rgb(${rgbCode()})`;
     inputG.nextElementSibling.innerHTML = inputG.value;
 
-    hexdec.innerHTML = `#${hex(inputR.value)}${hex(inputG.value)}${hex(inputB.value)}`;
-    rgb.innerHTML = `${inputR.value},${inputG.value},${inputB.value}`;
+    hexdec.innerHTML = hexCode();
+    rgb.innerHTML = rgbCode();;
 });
 
 inputB.addEventListener('input', ()=>{
-    viewer.style.background = `rgb(${inputR.value},${inputG.value},${inputB.value})`;
+    viewer.style.background = `rgb(${rgbCode()})`;
     inputB.nextElementSibling.innerHTML = inputB.value;
 
-    hexdec.innerHTML = `#${hex(inputR.value)}${hex(inputG.value)}${hex(inputB.value)}`;
-    rgb.innerHTML = `${inputR.value},${inputG.value},${inputB.value}`;
+    hexdec.innerHTML =  hexCode();
+    rgb.innerHTML = rgbCode();;
 });
+ 
 
-
-button.addEventListener('click', ()=>{
-    navigator.clipboard.writeText( `rgb(${inputR.value},${inputG.value},${inputB.value})`);
-
-    hexdec.innerHTML = `#${hex(inputR.value)}${hex(inputG.value)}${hex(inputB.value)}`
-}) 
-
-hexdec.innerHTML = `#${hex(inputR.value)}${hex(inputG.value)}${hex(inputB.value)}`
-rgb.innerHTML = `${inputR.value},${inputG.value},${inputB.value}`;
+hexdec.innerHTML = hexCode();
+rgb.innerHTML = rgbCode();
