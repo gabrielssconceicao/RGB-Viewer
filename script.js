@@ -9,7 +9,6 @@ const input = document.querySelectorAll('input');
 const hexdec = document.querySelector('#hex');
 const rgb = document.querySelector('#rgb');;
 const viewer = document.querySelector('#viewer');
-const button = document.querySelector('button');
 
 const rgbCode = () =>  `${input[0].value},${input[1].value},${input[2].value}`;
 
